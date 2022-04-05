@@ -37,14 +37,14 @@ public class XYZbankTest {
 		}
 
 		@Test(expected = IllegalArgumentException.class)
-		public void testWitndrawWithValidAmount() {
+		public void ValidAmount() {
 			int witndrawAmount = 4;
 			int witndrawStatus = accountdetails.withdrawal(witndrawAmount);
 			assertEquals(witndrawAmount, witndrawStatus);
 		}
 
 		@Test(expected = IllegalArgumentException.class)
-		public void testWitndrawWithInvalidAmount() {
+		public void InvalidAmount() {
 			int witndrawAmount = 7;
 			int witndrawStatus = accountdetails.withdrawal(witndrawAmount);
 			assertEquals(witndrawAmount, witndrawStatus);
