@@ -26,28 +26,28 @@ public class XYZbankTest {
 
 		@Test
 		public void DepositGreaterThanZero() {
-			boolean depositStatus = accountdetails.deposit(5);
+			boolean depositStatus = accountdetails.deposit(120);
 			assertEquals(true, depositStatus);
 		}
 
 		@Test(expected = IllegalArgumentException.class)
 		public void DepositLessThanZero() {
-			boolean depositStatus = accountdetails.deposit(-1);
+			boolean depositStatus = accountdetails.deposit(-75);
 			assertEquals(false, depositStatus);
 		}
 
 		@Test(expected = IllegalArgumentException.class)
 		public void ValidAmount() {
-			int witndrawAmount = 4;
-			int witndrawStatus = accountdetails.withdrawal(witndrawAmount);
-			assertEquals(witndrawAmount, witndrawStatus);
+			int withdrawalAmount = 112;
+			int witndrawalStatus = accountdetails.withdrawal(withdrawalAmount);
+			assertEquals(withdrawalAmount, witndrawalStatus);
 		}
 
 		@Test(expected = IllegalArgumentException.class)
 		public void InvalidAmount() {
-			int witndrawAmount = 7;
-			int witndrawStatus = accountdetails.withdrawal(witndrawAmount);
-			assertEquals(witndrawAmount, witndrawStatus);
+			int witndrawalAmount = 770;
+			int witndrawalStatus = accountdetails.withdrawal(witndrawalAmount);
+			assertEquals(witndrawalAmount, witndrawalStatus);
 		}
 
 	}
