@@ -10,7 +10,29 @@ public class accountDetails extends input {
 		ACTIVE, INACTIVE, CLOSED;
 		}
 	
+	public int getBalance() {
+		return accountBalance;
+	}
 
+	public STATUS getSTATUS() {
+		return STATUS;
+	}
+
+
+	public TYPE getTYPE() {
+		return TYPE;
+	}
+
+
+	public String getDateOfOpening() {
+		return dateOfOpening;
+	}
+
+
+	public void setDateOfOpening(String dateOfOpening) {
+		this.dateOfOpening = dateOfOpening;
+	}
+	
 	private String ownerName;
 	private int accountNumber;
 	private String state;
@@ -76,26 +98,5 @@ public class accountDetails extends input {
 		return details;
 	}
 	
-	public int getBalance() {
-		return accountBalance;
-	}
 
-	public STATUS getSTATUS() {
-		return STATUS;
-	}
-
-
-	public TYPE getTYPE() {
-		return TYPE;
-	}
-
-
-	public String getDateOfOpening() {
-		return dateOfOpening;
-	}
-
-
-	public void setDateOfOpening(String dateOfOpening) {
-		this.dateOfOpening = dateOfOpening;
-	}
 }
