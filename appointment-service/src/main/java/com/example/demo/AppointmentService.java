@@ -1,7 +1,9 @@
 package com.example.demo;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -16,12 +18,10 @@ public class AppointmentService {
 		return appointments;
 	}
 	
-	public Appointment getAppointmentByCustomerName(String customerName) {
-		for(Appointment slot : appointments) {
-			if(slot.getCustomer().getName().equals(customerName)) {
-				return slot;
-			}
-		}
-		return new Appointment();
+	public List<Appointment> getAppointmentByCustomerName(String customerName) {
+		return appointments.stream().filter(appoint -> appoint.getCustomer().getName().equals(customerName)).collect(Collectors.toList());
+	}
+	public List<Appointment> getAppointmentByPhoneNumber(BigInteger phone) {
+		return appointments.stream().filter(appoint -> appoint.getCustomer().getPhone().equals(phone)).collect(Collectors.toList());
 	}
 }

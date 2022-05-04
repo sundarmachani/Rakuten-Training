@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,13 @@ public class AppointmentController {
 		return appointmentservice.getAllAppointments();
 	}
 	
-	@GetMapping("/show/{name}")
-	Appointment getAppointmentByName(@PathVariable String name) {
+	@GetMapping("/show/name/{name}")
+	List<Appointment> getAppointmentByName(@PathVariable String name) {
 		return appointmentservice.getAppointmentByCustomerName(name);
 	}
 	
+	@GetMapping("/show/phone/{phone}")
+	List<Appointment> getAppointmentByPhone(@PathVariable BigInteger phone) {
+		return appointmentservice.getAppointmentByPhoneNumber(phone);
+	}
 }
