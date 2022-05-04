@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.math.BigInteger;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,45 +13,36 @@ public class Customer {
 	private int CustomerId;
 	private String name;
 	private int age;
-	private String address;
-	private int phone;
+	private BigInteger phone;
 	private String email;
 	
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
 	public int getCustomerId() {
-		return CustomerId;	
+		return CustomerId;
 	}
-	public void setCustomerId(int customerId) {
-		CustomerId = customerId;
-	}
+
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
 	public int getAge() {
 		return age;
 	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public int getPhone() {
+
+	public BigInteger getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}
+
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
+	
+	public Customer(int customerId, String name, int age, String address, BigInteger phone, String email) {
+		super();
+		CustomerId = customerId;
+		this.name = name;
+		this.age = age;
+		this.phone = phone;
+		this.email = email;
+	}	
 }
