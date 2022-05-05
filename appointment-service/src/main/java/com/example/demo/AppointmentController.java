@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,5 +40,11 @@ public class AppointmentController {
 	@GetMapping("/show/phone/{phone}")
 	List<Appointment> getAppointmentByPhone(@PathVariable BigInteger phone) {
 		return appointmentservice.getAppointmentByPhoneNumber(phone);
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	void deleteAppointmentById(@PathVariable Integer id) {
+		appointmentservice.deleteAppointmentById(id);
 	}
 }

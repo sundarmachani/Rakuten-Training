@@ -2,14 +2,7 @@ package com.example.demo;
 
 import java.math.BigInteger;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "customer")
 public class Customer {
-	@Id
 	private int CustomerId;
 	private String name;
 	private int age;
@@ -37,12 +30,17 @@ public class Customer {
 	}
 
 	
-	public Customer(int customerId, String name, int age, String address, BigInteger phone, String email) {
+	public Customer(int customerId, String name, int age, BigInteger phone, String email) {
 		super();
-		CustomerId = customerId;
+		this.CustomerId = customerId;
 		this.name = name;
 		this.age = age;
 		this.phone = phone;
 		this.email = email;
 	}	
+	
+	@Override
+	public String toString() {
+		return String.format("CustomerId = %s, Name = %s,Age = %d, Mobile Number= %s,Email = %s\",", this.getCustomerId(),this.getName(),this.getAge(),this.getPhone(),this.getEmail());
+	}
 }

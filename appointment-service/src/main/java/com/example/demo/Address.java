@@ -6,7 +6,7 @@ public class Address{
 	
 	public Address(String flatNumber, String street, String city, String state, String country, int zipcode) {
 		super();
-		FlatNumber = flatNumber;
+		this.FlatNumber = flatNumber;
 		this.street = street;
 		this.city = city;
 		this.state = state;
@@ -32,4 +32,10 @@ public class Address{
 	public int getZipcode() {
 		return zipcode;
 	}	
+	
+	@Override
+	public String toString() {
+		
+		return String.format("FlatNumber : %s \n Street : %s \n City : %s \n State : %s \n Country : %s \n ZipCode : %d",this.getFlatNumber(),this.getStreet(),this.getCity(),this.getState(),this.getCountry(),this.getZipcode());
+	}
 }
